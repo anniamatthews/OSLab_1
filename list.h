@@ -22,7 +22,7 @@ typedef struct node node_t;
 /* Defines the list structure, which simply points to the first node in the
  * list. */
 struct list {
-	node_t *head; // pointer to the head of the list
+	node_t *head;
 };
 typedef struct list list_t;
 
@@ -34,6 +34,9 @@ void list_free(list_t *l);
 
 /* Prints the list in some format. */
 void list_print(list_t *l);
+
+/* returns string of List */
+char* listToString(list_t *l);
 
 /* Returns the length of the list. */
 int list_length(list_t *l);
@@ -51,8 +54,8 @@ elem list_remove_at_index(list_t *l, int index);
 /* Checks to see if the given element exists in the list. */
 bool list_is_in(list_t *l, elem value);
 
-/* Returns the element at the given index. */
+/* Returns the element at the given index. Starting index is 1.  Return -1 error */
 elem list_get_elem_at(list_t *l, int index);
 
-/* Returns the index at which the given element appears. */
+/* Returns the index at which the given element appears. return -1 if does not exist */
 int list_get_index_of(list_t *l, elem value);
