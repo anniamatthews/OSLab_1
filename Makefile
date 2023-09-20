@@ -5,5 +5,5 @@
 # Nitsan Shai
 # nshai@google.com
 
-list: main.c list.c
-	gcc -o main main.c list.c 
+list: main.c list.c list.h
+	gcc -o main main.c list.c list.h
